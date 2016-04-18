@@ -6,7 +6,7 @@ class GameController < ApplicationController
     # Your code goes below.
     # The move the user chose is in the variable @user_move.
     # ===============================================================
-
+#    Meghan Making small change
     # Your logic here
 
     # In the end, make sure you assign the correct values to the
