@@ -2,37 +2,31 @@ class GameController < ApplicationController
   def rps
     @user_move = params[:the_move]
 
-    u_move = @user_move
-
     moves = ["rock", "paper", "scissors"]
-    comp_move = moves.sample
+    @computer_move = moves.sample
 
-    if u_move==comp_move
-      res = "tied"
+    if @user_move==@computer_move
+      @result = "tied"
 
-    elsif u_move=="rock" && comp_move=="paper"
-      res = "lost"
+    elsif @user_move=="rock" && @computer_move=="paper"
+      @result = "lost"
 
-    elsif u_move=="rock" && comp_move=="scissors"
-      res = "won"
+    elsif @user_move=="rock" && @computer_move=="scissors"
+      @result = "won"
 
-    elsif u_move=="paper" && comp_move=="rock"
-      res = "won"
+    elsif @user_move=="paper" && @computer_move=="rock"
+      @result = "won"
 
-    elsif u_move=="paper" && comp_move=="scissors"
-      res = "lost"
+    elsif @user_move=="paper" && @computer_move=="scissors"
+      @result = "lost"
 
-    elsif u_move=="scissors" && comp_move=="rock"
-      res = "lost"
+    elsif @user_move=="scissors" && @computer_move=="rock"
+      @result = "lost"
 
-    elsif u_move=="scissors" && comp_move=="paper"
-      res = "won"
+    elsif @user_move=="scissors" && @computer_move=="paper"
+      @result = "won"
     end
 
-
-    @computer_move = comp_move
-
-    @result = res
 
     # ===============================================================
     # Your code goes above.
