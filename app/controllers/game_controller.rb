@@ -8,13 +8,24 @@ class GameController < ApplicationController
     # ===============================================================
 
     # Your logic here
+    possibilities = ["rock","paper","scissors"]
+    compMove = possibilities.sample
+    if @user_move == compMove
+      resultS = "tied"
+    else
+      if ((@user_move == "rock" && compMove == "scissors")||(@user_move == "paper" && compMove == "rock")||(@user_move == "scissors" && compMove == "paper"))
+        resultS = "win"
+      else
+        resultS = "lose"
+      end
+    end
 
     # In the end, make sure you assign the correct values to the
     #   following two variables:
 
-    @computer_move = "Replace this string with the correct value."
+    @computer_move = compMove
 
-    @result = "Replace this string with the correct value."
+    @result = resultS
 
     # ===============================================================
     # Your code goes above.
