@@ -16,10 +16,10 @@ class GameController < ApplicationController
 
     if
       @user_move == @computer_move
-      @result = "won!"
+      @result = "tied"
     elsif
       @user_move == "paper" && @computer_move = "rock"
-      @result = "lose :(  "
+      @result = "won "
     elsif
       @user_move == "paper" && @computer_move = "scissors"
       @result = "lose :(  "
@@ -28,13 +28,13 @@ class GameController < ApplicationController
       @result = "lose :(  "
     elsif
       @user_move == "rock" && @computer_move = "scissors"
-      @result = "lose :(  "
+      @result = "win  "
     elsif
       @user_move == "scissors" && @computer_move = "rock"
       @result = "lose :(  "
     elsif
       @user_move == "scissors" && @computer_move = "paper"
-      @result = "lose :(  "
+      @result = "win "
     end
 
     # ===============================================================
