@@ -4,21 +4,20 @@ class GameController < ApplicationController
 
     @computer_move = ["rock", "paper", "scissors"].sample
 
-    @result =
     if @computer_move==@user_move
-      "tied!"
+      @result = "tied!"
     elsif @user_move=="rock" && @computer_move=="paper"
-      "lost!"
+      @result = "lost!"
     elsif @user_move=="rock" && @computer_move=="scissors"
-      "won!"
+      @result = "won!"
     elsif @user_move=="paper" && @computer_move=="rock"
-      "won!"
+      @result = "won!"
     elsif @user_move=="paper" && @computer_move=="scissors"
-      "lost!"
+      @result = "lost!"
     elsif @user_move=="scissors" && @computer_move=="rock"
-      "lost!"
-      elseif @user_move=="scissors" && @computer_move=="paper"
-      "won!"
+      @result = "lost!"
+    elsif @user_move=="scissors" && @computer_move=="paper"
+      @result = "won!"
     end
 
     render("rps.html.erb")
