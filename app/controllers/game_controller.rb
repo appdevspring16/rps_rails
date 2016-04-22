@@ -1,6 +1,7 @@
 class GameController < ApplicationController
   def rps
     @user_move = params[:the_move]
+@computer_move = ["rock", "paper", "scissors"].sample
 
     # ===============================================================
     # Your code goes below.
@@ -8,14 +9,28 @@ class GameController < ApplicationController
     # ===============================================================
 
     # Your logic here
+    if @user_move == @computer_move
+      @results = ["You Tied!"]
 
-    # In the end, make sure you assign the correct values to the
-    #   following two variables:
+    elsif @user_move == "paper" && @computer_move == "rock"
+      @result = ["You Win!"]
 
-    @computer_move = "Replace this string with the correct value."
+    elsif @user_move == "paper" && @computer_move == "scissors"
+      @result = "You Lose!"
 
-    @result = "Replace this string with the correct value."
+    elsif @user_move == "scissors" && @computer_move == "rock"
+      @result = "You Lose!"
 
+    elsif @user_move == "scissors" && @computer_move == "paper"
+      @result = "You Win!"
+
+    elsif @user_move == "rock" && @computer_move == "paper"
+      @result = "You Lose!"
+
+    elsif @user_move == "rock" && @computer_move == "scissors"
+      @result = "You Win!"
+
+    end
     # ===============================================================
     # Your code goes above.
     # ===============================================================
