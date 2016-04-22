@@ -9,12 +9,35 @@ class GameController < ApplicationController
 
     # Your logic here
 
+    @moves = [ "rock", "paper", "scissors" ]
+
+    # generate random computer move
+    @comp_move = @moves.sample
+    # puts "Computer chose #{comp_move}\n"
+
+    # rock beats scissors
+    # scissors beats paper
+    # paper beats rock
+
+    if ( @user_move == @comp_move )
+      @result = "Tie"
+    elsif ( (@user_move=="paper") && (@comp_move=="rock") )
+      @result = "Won"
+      # Shows logical OR || usage
+    elsif ( ( (@user_move=="scissors") && (@comp_move=="paper") ) || ( (@user_move=="rock") && (@comp_move=="scissors") ) )
+      @result = "Won"
+    else
+      # all other combinations are loss
+      @result = "Lost"
+    end
+
     # In the end, make sure you assign the correct values to the
     #   following two variables:
 
-    @computer_move = "Replace this string with the correct value."
+    @user_move = @user_move.capitalize
+    @computer_move = @comp_move.capitalize
 
-    @result = "Replace this string with the correct value."
+    # @result = "won"
 
     # ===============================================================
     # Your code goes above.
