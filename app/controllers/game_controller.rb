@@ -11,29 +11,29 @@ class GameController < ApplicationController
     @computer_move = ["rock","paper","scissors"].sample
     if @user_move == "rock"
       if @computer_move == "rock"
-        @result= "It's a Tie"
+        @result= "Tied"
       elsif @computer_move == "paper"
-        @result= "You Lose"
+        @result= "Lose"
       else
-        @result= "You Win"
+        @result= "Win"
       end
     end
     if @user_move == "paper"
       if @computer_move == "paper"
-        @result= "It's a Tie"
+        @result= "Tied"
       elsif @computer_move == "scissors"
-        @result= "You Lose"
+        @result= "Lose"
       else
-        @result= "You Win"
+        @result= "Win"
       end
     end
     if @user_move == "scissors"
       if @computer_move == "scissors"
-        @result= "It's a Tie"
+        @result= "Tied"
       elsif @computer_move == "rock"
-        @result= "You Lose"
+        @result= "Lose"
       else
-        @result= "You Win"
+        @result= "Win"
       end
     end
 
