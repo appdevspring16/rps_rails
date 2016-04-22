@@ -4,22 +4,32 @@ class GameController < ApplicationController
 
     # ===============================================================
     # Your code goes below.
-    # The move the user chose is in the variable @user_move.
+    # The move the user chose is in the variable @@user_move.
     # ===============================================================
 
-    # Your logic here
+    # Rock, Paper, Scissors
 
-    # In the end, make sure you assign the correct values to the
-    #   following two variables:
+    @computer_move = ["rock", "paper", "scissors"].sample
 
-    @computer_move = "Replace this string with the correct value."
+    if @user_move == @computer_move
+      puts = "tie game. Please play again."
 
-    @result = "Replace this string with the correct value."
+    elsif @user_move == "rock" && @computer_move == "scissors"
+        puts = "win. rock beats scissors. "
+    elsif @user_move == "rock" && @computer_move == "paper"
+        puts =  "lose. paper beats rock."
+    elsif @user_move == "scissors" && @computer_move == "paper"
+        puts = "win. scissors beats paper. "
+    elsif @user_move == "scissor" && @computer_move == "rock"
+        puts = "lose. rock beats scissors. "
+    elsif @user_move == "paper" && @computer_move == "rock"
+        puts = "win. paper beats rock."
+    elif
+        puts = "lose. scissors beats paper. "
+    end
 
-    # ===============================================================
-    # Your code goes above.
-    # ===============================================================
+  @result = puts
 
-    render("rps.html.erb")
+  render ("rps.html.erb")
   end
 end
