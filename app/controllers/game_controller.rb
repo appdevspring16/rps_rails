@@ -1,6 +1,7 @@
 class GameController < ApplicationController
   def rps
     @user_move = params[:the_move]
+@computer_move = ["rock", "paper", "scissors"].sample
 
     # ===============================================================
     # Your code goes below.
@@ -9,48 +10,27 @@ class GameController < ApplicationController
 
     # Your logic here
     if @user_move == @computer_move
-      @computer_move = ["rock", "paper", "scissors"].sample
-      @result = ["You tied"]
+      @results = ["You Tied!"]
 
     elsif @user_move == "paper" && @computer_move == "rock"
-      @computer_move = ["rock", "paper", "scissors"].sample
-
-      @result = ["You lose"]
+      @result = ["You Win!"]
 
     elsif @user_move == "paper" && @computer_move == "scissors"
-      @computer_move = ["rock", "paper", "scissors"].sample
-
-      @result = ["You lose"]
+      @result = "You Lose!"
 
     elsif @user_move == "scissors" && @computer_move == "rock"
-      @computer_move = ["rock", "paper", "scissors"].sample
-
-      @result = ["You lose"]
+      @result = "You Lose!"
 
     elsif @user_move == "scissors" && @computer_move == "paper"
-      p  @computer_move = ["rock", "paper", "scissors"].sample
-
-        @result = ["You win"]
+      @result = "You Win!"
 
     elsif @user_move == "rock" && @computer_move == "paper"
-      p  @computer_move = ["rock", "paper", "scissors"].sample
-
-        @result = ["You lose"]
+      @result = "You Lose!"
 
     elsif @user_move == "rock" && @computer_move == "scissors"
-      @computer_move = ["rock", "paper", "scissors"].sample
-
-      @result = ["You win"]
+      @result = "You Win!"
 
     end
-    # In the end, make sure you assign the correct values to the
-    #   following two variables:
-
-
-    @computer_move = ["rock", "paper", "scissors"].sample
-
-    @result = [result]
-
     # ===============================================================
     # Your code goes above.
     # ===============================================================
