@@ -12,9 +12,9 @@ class GameController < ApplicationController
     # In the end, make sure you assign the correct values to the
     #   following two variables:
 
-    @computer_move = "Replace this string with the correct value."
+    @computer_move = ["rock", "paper", "scissor"].sample
 
-    @result = "Replace this string with the correct value."
+    @result = ["rock", "paper", "scissor"].sample
 
     # ===============================================================
     # Your code goes above.
