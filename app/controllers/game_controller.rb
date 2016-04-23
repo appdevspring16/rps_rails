@@ -1,25 +1,33 @@
 class GameController < ApplicationController
   def rps
     @user_move = params[:the_move]
+    puts "Welcome to Rock, Paper, Scissors!"
 
-    # ===============================================================
-    # Your code goes below.
-    # The move the user chose is in the variable @user_move.
-    # ===============================================================
+    puts "rock, paper, or scissors?"
 
-    # Your logic here
+    @user_move = gets.chomp
 
-    # In the end, make sure you assign the correct values to the
-    #   following two variables:
+    puts "You chose #{@user_move}."
 
-    @computer_move = "Hey, the computer move goes here."
+    @computer_move = ["rock", "paper", "scissors"].sample
 
-    @result = "Replace this string with the correct value."
+    puts "The computer chose #{@computer_move}."
 
-    # ===============================================================
-    # Your code goes above.
-    # ===============================================================
+    if @user_move == computer_move
+     puts @result"You tied!"
+    elsif @user_move == "paper" && @computer_move == "rock"
+     puts @result"You win!"
+    elsif @user_move == "paper" && @computer_move == "scissors"
+       puts @result"You lose!"
+    elsif @user_move == "scissors" && @computer_move == "rock"
+     @result"You lose!"
+    elsif @user_move == "scissors" && @computer_move == "paper"
+       puts @result"You win!"
+    elsif @user_move == "rock" && @computer_move == "paper"
+       puts @result"You lose!"
+    elsif @user_move == "rock" && @computer_move == "scissors"
+     puts @result = "You win!"
+            render("rps.html.erb")
 
-    render("rps.html.erb")
   end
 end
