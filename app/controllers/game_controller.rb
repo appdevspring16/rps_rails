@@ -9,7 +9,7 @@ class GameController < ApplicationController
 
     # Your logic here
    
-    puts "You chose #{user_move}"
+    puts 'You chose #{user_move}'
     computer_move= ["rock", "paper", "scissors"].sample
     puts "The computer chose #{computer_move}"
 
