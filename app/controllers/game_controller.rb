@@ -12,7 +12,7 @@ class GameController < ApplicationController
     # In the end, make sure you assign the correct values to the
     #   following two variables:
 
-    @computer_move = "Replace this string with the correct value."
+    @computer_move = "Hey, the computer move goes here."
 
     @result = "Replace this string with the correct value."
 
