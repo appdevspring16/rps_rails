@@ -14,19 +14,19 @@ class GameController < ApplicationController
     puts "The computer chose #{computer_move}"
 
     if @user_move == @computer_move #computer move = player move, result = tie
-        puts "You tied!" 
+        @result= "You tied!" 
     elsif @user_move == "rock" && @computer_move== "paper" # player move = rock & computer move = paper
-          puts "Computer wins!" # result = computer wins 
+        @result= "Computer wins!" # result = computer wins 
     elsif @user_move == "rock" && @computer_move== "scissors" # player move = rock & computer move = scissors
-          puts "You win!" # result = player wins
+          @result= "You win!" # result = player wins
     elsif @user_move == "paper" && @computer_move== "rock"#player move = paper & computer move = rock
-          puts "Computer wins!" #result 
+          @result= "Computer wins!" #result 
     elsif @user_move == "paper" && @computer_move== "scissors" #player move = paper 
-          puts "Computer wins!" #result 
+          @result= "Computer wins!" #result 
     elsif @user_move == "scissors" && @computer_move== "rock" #player move = scissors
-          puts "Computer wins!" #result 
+          @result= "Computer wins!" #result 
     elsif @user_move == "scissors" && @computer_move== "paper" #player move = scissors
-          puts "You win!" #result      
+          @result= "You win!" #result      
         
     end
 
