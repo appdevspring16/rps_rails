@@ -27,7 +27,7 @@ class GameController < ApplicationController
 
       elsif @computer_move =="rock" && @user_move =="paper"
         @result= "win"
-      elsif @computer_move="scissors" && @user_move=="rock"
+      elsif @computer_move=="scissors" && @user_move=="rock"
         @result= "win"
       elsif @computer_move=="paper" && @user_move=="scissors"
         @result= "win"
