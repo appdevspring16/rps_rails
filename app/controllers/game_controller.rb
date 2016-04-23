@@ -17,19 +17,19 @@ class GameController < ApplicationController
     @options = ["rock","paper","scissors"].sample
 
     if @user_move == @options
-      @result = "We tied you bumpkin!"
+      @result = "We tied!"
     elsif @user_move == "paper" && @options == "rock"
-      @result = "You win you punk!"
+      @result = "You win!"
     elsif @user_move == "paper" && @options == "scissors"
-      @result = "You lose you animal!"
+      @result = "You lose!"
     elsif @user_move == "scissors" && @options == "rock"
-      @result = "You lose you punk!"
+      @result = "You lose!"
     elsif @user_move == "scissors" && @options == "paper"
-      @result = "You beat me you animal!"
+      @result = "You win!"
     elsif @user_move == "rock" && @options == "scissors"
-      @result = "You win you punk!"
+      @result = "You win!"
     elsif @user_move == "rock" && @options == "paper"
-      @result = "You lose you animal!"
+      @result = "You lose!"
     else
       @result = "I said pick rock, paper, or scissors!"
     end
